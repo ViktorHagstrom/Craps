@@ -10,6 +10,7 @@ public class Main {
         Dice d2 = new Dice();
 
         game.comeOutRoll(d1,d2);
+        game.rollDices(d1,d2);
 
 
 

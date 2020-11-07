@@ -3,7 +3,15 @@ public class Game {
 
 
     // int nOfPlayers;
+
+
+    private int sum;
+
+    public void setSum(Dice dice1, Dice dice2){
+        sum = dice1.getValue() + dice2.getValue();
+    }
     private int pN; // point number
+
     public void setPN(int pN) {
         this.pN = pN;
     }
@@ -32,13 +40,13 @@ public class Game {
     // come out roll click to roll
     // check for win/fail conditions
     public void comeOutRoll(Dice dice1,Dice dice2){
-        // todo make this work for 2 dice
+
         System.out.println("This is the come out roll" +
                 "\nIf you roll 7 or 11 you win.\nBut if you roll 2,3 or 12" +
                 " you lose.");
         dice1.rollDice();
         dice2.rollDice();
-        int sum =dice1.getValue() + dice2.getValue();
+        setSum(dice1,dice2);
 
         // if (winCon.contains(roll)) player wins, npcs that bet 1 wins
         if (sum==7||sum==11){
@@ -54,6 +62,24 @@ public class Game {
             System.out.println(sum + " this is your point number, hit this to win");
             setPN(sum);
         }
+    }
+
+    public void rollDices(Dice dice1, Dice dice2){
+        while (true) {
+            dice1.rollDice();
+            dice2.rollDice();
+            setSum(dice1, dice2);
+            System.out.println(sum + "\n You need to hit Continue rolling");
+
+            if (sum == pN) {
+                System.out.println("Congratulations you win!");
+                break;
+            } else if (sum == 2 || sum == 3 || sum == 12) {
+                System.out.println("Too bad you lose");
+                break;
+            }
+        }
+
     }
 
 
