@@ -19,11 +19,22 @@ public class Dice {
     public void rollDice(){
         Scanner in = new Scanner(System.in);
 
-        System.out.println("Press r to roll");
-        String input = in.nextLine();
-        if (input.equals("r")){
-            setRandomValue();
-            printDice();
+        while (true)
+        try {
+            System.out.println("Press r to roll");
+            String input = in.nextLine();
+
+            if (input.equals("r")){
+                setRandomValue();
+                printDice();
+
+                break;
+            }
+            else{
+                System.out.println("Incorrect input.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
 
@@ -33,17 +44,7 @@ public class Dice {
         System.out.println(getValue());
     }
 
-    public void comeOutRoll(){
-        System.out.println("This is the come out roll" +
-                "\nIf you roll 7 or 11 you win.\nBut if you roll 2,3 or 12" +
-                " you lose.");
-        rollDice();
 
-        if (this.value==7||this.value==11){
-            System.out.println(this.getValue() + " You win!");
-
-        }
-    }
 
 
 }
