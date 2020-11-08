@@ -7,14 +7,18 @@ public class Main {
 
         Game game = new Game();
         Dice d1 = new Dice();
+        d1.setName("Dice 1");
         Dice d2 = new Dice();
+        d2.setName("Dice 2");
 
         game.startGame();
         while (true) {
 
             game.comeOutRoll(d1, d2);
-            game.rollDices(d1, d2);
-            System.out.println("Play again?");
+            if (game.isExit() == false){
+                game.rollDices(d1, d2);
+            }
+            System.out.println("\nPress J to play again, any other key will finish the game.");
             Scanner in = new Scanner(System.in);
             String input = in.next();
             in.nextLine();
@@ -22,23 +26,7 @@ public class Main {
                 System.out.println();
             }
             else break;
-
-
-
         }
-
-
-
-        // d1.setRandomValue();
-        //d1.printDice();
-        // d1.printDice();
-        // d1.setValue(7);
-        // d1.comeOutRoll(d1,d2);
-
-        //d1.rollDice();
-
-
+        game.endGame();
     }
-
-
 }

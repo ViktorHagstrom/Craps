@@ -1,40 +1,60 @@
 public class Player {
-    public String getName() {
-        return name;
-    }
 
-    // String name;
+
     private String name;
-
     private int wins;
     private int loses;
 
-    public int[] getScore() {
-        return score;
-    }
-
+    /**
+     * Creates a new player
+     * @return the created player
+     */
     public static Player getInstance(){
         Player player = new Player();
         return player;
     }
-    private int[] score = {wins,loses};
 
+    /**
+     * Gets the name of a player
+     * @return player name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Gets the amount of wins of a player
+     * @return number of wins
+     */
     public int getWins() {
         return wins;
     }
 
+    /**
+     * Gets the amount of loses of a player
+     * @return number of loses
+     */
     public int getLoses() {
         return loses;
     }
 
-    // set playerName();
+    /**
+     * Sets the player name
+     * @param name players name
+     */
     public void setName(String name) {
         this.name = name; }
 
+    /**
+     * Updates player wins
+     */
     public void playerWin(){
         this.wins += 1;
     }
 
+    /**
+     * Updates player loses
+     */
     public void playerLose(){
         this.loses +=1;
     }

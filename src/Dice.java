@@ -2,49 +2,76 @@ import java.util.Scanner;
 
 public class Dice {
 
-    // int value;
     private int value;
+    private String name;
 
+    /**
+     * Gets the given name for the dice
+     * @return dice name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Sets the name for the dice
+     * @param name dice name
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * gets the value of a dice
+     * @return dices value
+     */
     public int getValue() {
         return value;
     }
 
-    public void setValue(int value) {
-        this.value = value;
-    }
+    /*
+    /**
+     * Sets the value of a dice
+     * @param value the value to be set
+     *//*
+    public void setValue(int value) {this.value = value;} //used for testing
+    */
 
+    /**
+     * Sets a random value to a dice
+     */
     public void setRandomValue() {
         this.value = (int) (Math.random() * 6) + 1;
     }
-    public void rollDice(){
+
+    /**
+     * Rolls a dice through interaction with user and prints out the value
+     */
+    public void rollDice() {
         Scanner in = new Scanner(System.in);
 
         while (true)
-        try {
-            System.out.println("Press r to roll");
-            String input = in.nextLine();
+            try {
+                System.out.println("\nPress r to roll " + this.getName());
+                String input = in.nextLine();
 
-            if (input.equals("r")){
-                setRandomValue();
-                printDice();
+                if (input.equals("r")) {
+                    setRandomValue();
+                    printDice();
 
-                break;
+                    break;
+                } else {
+                    System.out.println("Incorrect input.");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
             }
-            else{
-                System.out.println("Incorrect input.");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
     }
 
+    /**
+     * Prints the value of a dice
+     */
     public void printDice() {
-        System.out.println(getValue());
+        System.out.println("You rolled " + getValue());
     }
-
-
-
-
 }
