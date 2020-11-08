@@ -1,3 +1,10 @@
+/**
+ * Created by Viktor Hagström
+ * Date: 2020-11-6
+ * Time:
+ * Project: Craps
+ * Copyright: MIT
+ */
 import java.util.Dictionary;
 import java.util.Scanner;
 
