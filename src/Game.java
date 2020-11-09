@@ -9,10 +9,10 @@ import java.util.Scanner;
 
 public class Game {
 
-    private int OUT7 = 7;
+    private final int OUT7 = 7;
     private int sum;
-    private String LMESSAGE = "\nYou lose!";
-    private String WINMESSAGE = "\nCongratulations you win!";
+    private final String LMESSAGE = "\nYou lose!";
+    private final String WINMESSAGE = "\nCongratulations you win!";
     private int pN; // point number
     private Player player;
     private boolean exit = false;

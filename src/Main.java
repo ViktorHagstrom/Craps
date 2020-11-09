@@ -27,7 +27,7 @@ public class Main {
             if (game.isExit() == false){
                 try {
                     game.rollDices(d1, d2);
-                } catch (NoSuchElementException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
             }
