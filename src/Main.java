@@ -5,7 +5,9 @@
  * Project: Craps
  * Copyright: MIT
  */
+import java.io.IOException;
 import java.util.Dictionary;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Main {
@@ -23,16 +25,25 @@ public class Main {
 
             game.comeOutRoll(d1, d2);
             if (game.isExit() == false){
-                game.rollDices(d1, d2);
+                try {
+                    game.rollDices(d1, d2);
+                } catch (NoSuchElementException e) {
+                    e.printStackTrace();
+                }
             }
-            System.out.println("\nPress J to play again, any other key will finish the game.");
-            Scanner in = new Scanner(System.in);
-            String input = in.next();
-            in.nextLine();
-            if (input.equalsIgnoreCase("J")){
-                System.out.println();
+            try {
+                System.out.println("\nPress J to play again, any other key will finish the game.");
+                Scanner in = new Scanner(System.in);
+                String input = in.nextLine();
+                if (input.equalsIgnoreCase("J")){
+                    System.out.println();
+                }
+                else{
+                    break;
+                }
+            } catch (NoSuchElementException e) {
+                e.printStackTrace();
             }
-            else break;
         }
         game.endGame();
     }

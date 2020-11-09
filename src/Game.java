@@ -177,7 +177,6 @@ public class Game {
                 System.out.println("You hit the out 7." + LMESSAGE + "\nYou have a total of " + player.getWins()
                         + " wins and " + player.getLoses() + " loses.");
 
-
                 break;
             } else {
                 System.out.println("\nYour total is " + sum + "\nYou need to hit " + pN +
