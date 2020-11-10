@@ -27,7 +27,7 @@ public class Main {
             if (game.isExit() == false){
                 try {
                     game.rollDices(d1, d2);
-                } catch (Exception e) {
+                } catch (NoSuchElementException e) {
                     e.printStackTrace();
                 }
             }
@@ -46,5 +46,8 @@ public class Main {
             }
         }
         game.endGame();
+
     }
 }
+
+

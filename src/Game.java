@@ -90,6 +90,7 @@ public class Game {
             System.out.println("\t\u2680\t\u2681\t\u2682\t\u2683\t\u2684\t\u2685" +
                     "\nWelcome to the World Series of Craps!\n" +
                     "Please enter your name");
+
             player.setName(in.next());
 
         } catch (Exception e) {
