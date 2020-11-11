@@ -5,6 +5,7 @@
  * Project: Craps
  * Copyright: MIT
  */
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Dice {
@@ -69,9 +70,17 @@ public class Dice {
                     break;
                 } else {
                     System.out.println("Incorrect input.");
+                    in.nextLine();
                 }
-            } catch (Exception e) {
+            }
+        catch(NoSuchElementException e){
+            System.out.println("Exiting system, thank you for playing");
+                System.exit(0);
+        }
+
+        catch (Exception e) {
                 e.printStackTrace();
+                in.nextLine();
 
             }
     }

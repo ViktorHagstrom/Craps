@@ -5,6 +5,7 @@
  * Project: Craps
  * Copyright: MIT
  */
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Game {
@@ -93,7 +94,12 @@ public class Game {
 
             player.setName(in.nextLine());
 
-        } catch (Exception e) {
+        }
+        catch(NoSuchElementException e){
+            System.out.println("Exiting system, thank you for playing");
+            System.exit(0);
+        }
+        catch (Exception e) {
             e.printStackTrace();
             setExit(true);
         }
