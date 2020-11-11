@@ -62,7 +62,7 @@ public class Dice {
                 System.out.println("\nPress r to roll " + this.getName());
                 String input = in.nextLine();
 
-                if (input.equals("r")) {
+                if (input.equalsIgnoreCase("r")) {
                     setRandomValue();
                     printDice();
 
@@ -72,6 +72,7 @@ public class Dice {
                 }
             } catch (Exception e) {
                 e.printStackTrace();
+
             }
     }
 

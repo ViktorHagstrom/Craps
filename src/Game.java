@@ -91,20 +91,21 @@ public class Game {
                     "\nWelcome to the World Series of Craps!\n" +
                     "Please enter your name");
 
-            player.setName(in.next());
+            player.setName(in.nextLine());
 
         } catch (Exception e) {
             e.printStackTrace();
+            setExit(true);
         }
         System.out.println("Welcome " + player.getName() + "\n");
     }
 
     /**
-     * The end of the game
+     *
      */
     public void endGame() {
         System.out.println("Thank you for playing!\n" +
-                "Your final score was " + player.getWins() + " wins and " + player.getLoses() + " loses.");
+                "Your final score is " + player.getWins() + " wins and " + player.getLoses() + " loses.");
     }
 
     /**
@@ -180,8 +181,8 @@ public class Game {
 
                 break;
             } else {
-                System.out.println("\nYour total is " + sum + "\nYou need to hit " + pN +
-                        " to win." + "\n\nContinue rolling");
+                System.out.println("\nYour total roll is " + sum + "\nYou need to hit " + pN +
+                        " to win." + "\n\nContinue rolling\n");
             }
 
 

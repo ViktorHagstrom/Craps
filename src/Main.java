@@ -29,6 +29,7 @@ public class Main {
                     game.rollDices(d1, d2);
                 } catch (NoSuchElementException e) {
                     e.printStackTrace();
+
                 }
             }
             try {
